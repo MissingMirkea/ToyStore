@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+			  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			  xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports
+              http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+			  name="Toys_Report"
+			  language="java"
+			  pageWidth="595"
+			  pageHeight="842"
+			  columnWidth="535"
+			  leftMargin="20"
+			  rightMargin="20"
+			  topMargin="20"
+			  bottomMargin="20"
+			  uuid="d7a8f7a3-5c4a-4a3d-b2e5-1f3c9e8d7f1c">
+
+	<!-- Properties -->
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Sample DB"/>
+
+	<!-- Styles -->
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+
+	<!-- Query -->
+	<queryString language="SQL">
+		<![CDATA[SELECT * FROM toys]]>
+	</queryString>
+
+	<!-- Fields -->
+	<field name="id" class="java.lang.Long"/>
+	<field name="name" class="java.lang.String"/>
+	<field name="country" class="java.lang.String"/>
+	<field name="toyType" class="java.lang.String"/>
+	<field name="age" class="java.lang.Integer"/>
+	<field name="cantity" class="java.lang.Integer"/>
+	<field name="price" class="java.lang.Float"/>
+
+	<!-- Report Sections -->
+	<title>
+		<band height="132">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="553" height="95" backcolor="#000000"/>
+				<staticText>
+					<reportElement style="Title" x="12" y="0" width="370" height="66"/>
+					<text><![CDATA[Toys Inventory Report]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="90" y="60" width="249" height="29"/>
+					<text><![CDATA[Toate jucariile]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</title>
+
+	<columnHeader>
+		<band height="26">
+			<staticText>
+				<reportElement style="Column header" x="10" y="7" width="79" height="18" forecolor="#000000"/>
+				<text><![CDATA[Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="89" y="7" width="79" height="18" forecolor="#000000"/>
+				<text><![CDATA[Country]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="168" y="7" width="79" height="18" forecolor="#000000"/>
+				<text><![CDATA[Type]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="247" y="7" width="79" height="18" forecolor="#000000"/>
+				<text><![CDATA[Age]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="326" y="7" width="79" height="18" forecolor="#000000"/>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="405" y="7" width="79" height="18" forecolor="#000000"/>
+				<text><![CDATA[price]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+
+	<detail>
+		<band height="18">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="555" height="18"/>
+				<textField>
+					<reportElement style="Detail" x="10" y="0" width="79" height="18"/>
+					<textFieldExpression><![CDATA[$F{name}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="89" y="0" width="79" height="18"/>
+					<textFieldExpression><![CDATA[$F{country}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="168" y="0" width="79" height="18"/>
+					<textFieldExpression><![CDATA[$F{toyType}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="247" y="0" width="79" height="18"/>
+					<textFieldExpression><![CDATA[$F{age}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="326" y="0" width="79" height="18"/>
+					<textFieldExpression><![CDATA[$F{cantity}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" x="405" y="0" width="79" height="18"/>
+					<textFieldExpression><![CDATA[$F{price}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+
+	<pageFooter>
+		<band height="25">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="1" width="555" height="24" forecolor="#D0B48E" backcolor="#000000"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="513" y="0" width="40" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="433" y="0" width="80" height="20" forecolor="#FFFFFF"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="1" width="197" height="20" forecolor="#FFFFFF"/>
+					<textElement verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+</jasperReport>

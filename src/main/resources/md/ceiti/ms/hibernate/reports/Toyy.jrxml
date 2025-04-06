@@ -1,0 +1,161 @@
+<!-- Created with Jaspersoft Studio version 7.0.1.final using JasperReports Library version 7.0.1-573496633c2b4074e32f433154b543003f7d2498  -->
+<jasperReport name="Toyy" language="java" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" >
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Toys"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50.0" />
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18.0" />
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14.0" />
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style>
+				<pen lineWidth="1.0" lineColor="#000000"/>
+				<box>
+					<topPen lineWidth="1.0" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineColor="#000000"/>
+				</box>
+			</style>
+		</conditionalStyle>
+	</style>
+	<query language="SQL"><![CDATA[Select * from Toys;]]></query>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.name" value="id"/>
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="toys"/>
+	</field>
+	<field name="name" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="name"/>
+		<property name="com.jaspersoft.studio.field.label" value="name"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="toys"/>
+	</field>
+	<field name="country" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="country"/>
+		<property name="com.jaspersoft.studio.field.label" value="country"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="toys"/>
+	</field>
+	<field name="toytype" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.name" value="toytype"/>
+		<property name="com.jaspersoft.studio.field.label" value="toytype"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="toys"/>
+	</field>
+	<field name="age" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="age"/>
+		<property name="com.jaspersoft.studio.field.label" value="age"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="toys"/>
+	</field>
+	<field name="cantity" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.name" value="cantity"/>
+		<property name="com.jaspersoft.studio.field.label" value="cantity"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="toys"/>
+	</field>
+	<field name="price" class="java.lang.Float">
+		<property name="com.jaspersoft.studio.field.name" value="price"/>
+		<property name="com.jaspersoft.studio.field.label" value="price"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="toys"/>
+	</field>
+	<background splitType="Stretch"/>
+	<title height="102" splitType="Stretch">
+		<element kind="image"  x="725" y="0" width="77" height="102">
+			<expression><![CDATA["cherry.jpg"]]></expression>
+		</element>
+		<element kind="frame" x="0" y="0" width="721" height="66" backcolor="#000000">
+			<element kind="staticText"  x="0" y="0" width="370" height="66" bold="false" vTextAlign="Bottom" style="Title">
+				<text><![CDATA[Cherry Title]]></text>
+				<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4" style="Title"/>
+			</element>
+			<element kind="staticText"  x="370" y="37" width="316" height="29" fontSize="22.0" bold="false" hTextAlign="Right" style="SubTitle">
+				<text><![CDATA[Cherry SubTitle]]></text>
+			</element>
+		</element>
+		<element kind="frame"  x="0" y="70" width="721" height="32" forecolor="#000000" backcolor="#CC0000">
+			<element kind="textField"  x="553" y="12" width="144" height="20" forecolor="#FFFFFF" fontSize="12.0" pattern="EEEEE dd MMMMM yyyy" hTextAlign="Right">
+				<expression><![CDATA[new java.util.Date()]]></expression>
+			</element>
+		</element>
+	</title>
+	<pageHeader splitType="Stretch"/>
+	<columnHeader height="18" splitType="Stretch">
+		<element kind="staticText"  x="0" y="0" width="113" height="18" forecolor="#000000" bold="false" style="Column header">
+			<text><![CDATA[id]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="13ee2f2e-3c78-4ad8-8d46-ee29ddf8b625"/>
+		</element>
+		<element kind="staticText"  x="113" y="0" width="113" height="18" forecolor="#000000" bold="false" style="Column header">
+			<text><![CDATA[name]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b9eb13d6-cce3-4e05-b91a-12aaac19b695"/>
+		</element>
+		<element kind="staticText"  x="226" y="0" width="113" height="18" forecolor="#000000" bold="false" style="Column header">
+			<text><![CDATA[country]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a4c8e22-c119-4c94-9f92-f05268780035"/>
+		</element>
+		<element kind="staticText"  x="339" y="0" width="113" height="18" forecolor="#000000" bold="false" style="Column header">
+			<text><![CDATA[toytype]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="35a1b4a5-d745-4a9b-af03-09bdd32c4d56"/>
+		</element>
+		<element kind="staticText"  x="452" y="0" width="113" height="18" forecolor="#000000" bold="false" style="Column header">
+			<text><![CDATA[age]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6089f942-7cad-4210-bf36-203eac7a428a"/>
+		</element>
+		<element kind="staticText"  x="565" y="0" width="113" height="18" forecolor="#000000" bold="false" style="Column header">
+			<text><![CDATA[cantity]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6bfe4fa4-2c4e-4f76-b0c3-0045b5543095"/>
+		</element>
+		<element kind="staticText"  x="678" y="0" width="113" height="18" forecolor="#000000" bold="false" style="Column header">
+			<text><![CDATA[price]]></text>
+			<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="05a5024f-a0d3-4fe1-b033-ef0546158631"/>
+		</element>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<element kind="frame"  mode="Opaque" x="0" y="0" width="797" height="18" style="Row">
+				<element kind="textField"  positionType="Float" x="0" y="0" width="113" height="18" fontSize="14.0" textAdjust="StretchHeight" style="Detail">
+					<expression><![CDATA[$F{id}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="13ee2f2e-3c78-4ad8-8d46-ee29ddf8b625"/>
+				</element>
+				<element kind="textField"  positionType="Float" x="113" y="0" width="113" height="18" fontSize="14.0" textAdjust="StretchHeight" style="Detail">
+					<expression><![CDATA[$F{name}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b9eb13d6-cce3-4e05-b91a-12aaac19b695"/>
+				</element>
+				<element kind="textField"  positionType="Float" x="226" y="0" width="113" height="18" fontSize="14.0" textAdjust="StretchHeight" style="Detail">
+					<expression><![CDATA[$F{country}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="8a4c8e22-c119-4c94-9f92-f05268780035"/>
+				</element>
+				<element kind="textField"  positionType="Float" x="339" y="0" width="113" height="18" fontSize="14.0" textAdjust="StretchHeight" style="Detail">
+					<expression><![CDATA[$F{toytype}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="35a1b4a5-d745-4a9b-af03-09bdd32c4d56"/>
+				</element>
+				<element kind="textField"  positionType="Float" x="452" y="0" width="113" height="18" fontSize="14.0" textAdjust="StretchHeight" style="Detail">
+					<expression><![CDATA[$F{age}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6089f942-7cad-4210-bf36-203eac7a428a"/>
+				</element>
+				<element kind="textField"  positionType="Float" x="565" y="0" width="113" height="18" fontSize="14.0" textAdjust="StretchHeight" style="Detail">
+					<expression><![CDATA[$F{cantity}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="6bfe4fa4-2c4e-4f76-b0c3-0045b5543095"/>
+				</element>
+				<element kind="textField"  positionType="Float" x="678" y="0" width="113" height="18" fontSize="14.0" textAdjust="StretchHeight" style="Detail">
+					<expression><![CDATA[$F{price}]]></expression>
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="05a5024f-a0d3-4fe1-b033-ef0546158631"/>
+				</element>
+			</element>
+		</band>
+	</detail>
+	<columnFooter height="7" splitType="Stretch">
+		<element kind="line"  positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1">
+			<pen lineWidth="0.5" lineColor="#999999"/>
+		</element>
+	</columnFooter>
+	<pageFooter height="25" splitType="Stretch">
+		<element kind="frame"  mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000">
+			<element kind="textField"  x="757" y="3" width="40" height="20" forecolor="#FFFFFF" fontSize="10.0" evaluationTime="Report" bold="false" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA[" " + $V{PAGE_NUMBER}]]></expression>
+			</element>
+			<element kind="textField"  x="677" y="3" width="80" height="20" forecolor="#FFFFFF" fontSize="10.0" bold="false" hTextAlign="Right" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></expression>
+			</element>
+			<element kind="textField"  x="2" y="3" width="197" height="20" forecolor="#FFFFFF" fontSize="10.0" pattern="EEEEE dd MMMMM yyyy" bold="false" vTextAlign="Middle" style="Column header">
+				<expression><![CDATA[new java.util.Date()]]></expression>
+			</element>
+		</element>
+	</pageFooter>
+	<summary splitType="Stretch"/>
+</jasperReport>
